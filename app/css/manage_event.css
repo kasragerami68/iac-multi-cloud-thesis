@@ -1,0 +1,169 @@
+/* --- custom admin panel styles --- */
+body {
+    font-family: 'Vazirmatn', 'Segoe UI', Arial, sans-serif;
+    background: #f3f6fb;
+    padding: 28px 10px 20px 10px;
+    color: #2a2a2a;
+}
+
+h1 {
+    text-align: left;
+    color: #0a5d9c;
+    margin-bottom: 32px;
+    font-size: 2rem;
+}
+
+.form-area, .table-area {
+    max-width: 850px;
+    margin: 0 auto 38px auto;
+    background: #fff;
+    padding: 28px 22px 22px 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+}
+
+.form-area h2, .table-area h2 {
+    margin-bottom: 18px;
+    color: #0a5d9c;
+    font-size: 1.2rem;
+}
+
+form label {
+    display: block;
+    margin-top: 13px;
+    font-weight: 600;
+}
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 9px;
+    margin-top: 4px;
+    border-radius: 7px;
+    border: 1.2px solid #b3c2d1;
+    font-size: 1rem;
+    background: #fafdff;
+}
+form button {
+    margin-top: 22px;
+    width: 100%;
+    background: #0a5d9c;
+    color: #fff;
+    border: none;
+    padding: 13px;
+    font-size: 1.08rem;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 500;
+}
+form button:hover {
+    background: #073a5c;
+}
+
+.table-area table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-area thead {
+    background: #0a5d9c;
+    color: #fff;
+}
+.table-area th, .table-area td {
+    padding: 13px 8px;
+    border: 1px solid #c2c2c2;
+    text-align: left;
+    font-size: 1rem;
+}
+.edit-button, .delete-button {
+    padding: 7px 13px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.98rem;
+}
+.edit-button {
+    background: #1bbf5c;
+    margin-right: 7px;
+}
+.delete-button {
+    background: #e23c3c;
+}
+.edit-button:hover {
+    background: #158c41;
+}
+.delete-button:hover {
+    background: #b92d2d;
+}
+
+@media (max-width: 650px) {
+    .form-area, .table-area {
+        padding: 13px 4px 10px 4px;
+    }
+    form button {
+        font-size: 0.97rem;
+    }
+    .table-area th, .table-area td {
+        font-size: 0.97rem;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+}
+.modal .modal-content {
+    background: #fff;
+    margin: 15% auto;
+    padding: 24px 32px;
+    border-radius: 10px;
+    width: 92%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.modal button {
+    margin-top: 13px;
+    padding: 8px 22px;
+    border: none;
+    background: #0a5d9c;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.modal button:hover {
+    background: #073a5c;
+}
+
+.nav-bar {
+    position: absolute;
+    top: 18px;
+    right: 32px;
+    display: flex;
+    gap: 10px;
+}
+#goHome {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 18px;
+    background: #0a5d9c;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 1.08rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.18s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+}
+#goHome:hover {
+    background: #073a5c;
+}

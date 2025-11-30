@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Community Gatherings</title>
+</head>
+
+<body>
+        <!-- Main header and search/filter area -->
+        <header>
+                <h1>Find Your Next Gathering</h1>
+                <div class="search-area">
+                        <input type="text" id="eventSearch" placeholder="Type to search events..." />
+                        <select id="eventCategory">
+                                <option value="">All Types</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Seminar">Seminar</option>
+                                <option value="Conference">Conference</option>
+                                <option value="Meetup">Meetup</option>
+                        </select>
+                </div>
+        </header>
+        <div class="auth-btn">
+                <button id="openLogin">Sign In</button>
+        </div>
+        <main id="gathering-list" class="gathering-grid">
+                <!-- Event cards will be rendered here -->
+        </main>
+        <!-- Login Modal -->
+        <div id="modalLogin" class="modal">
+                <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Sign In</h2>
+                        <form>
+                                <label for="username">User:</label>
+                                <input type="text" id="username" name="username" required>
+                                <label for="password">Pass:</label>
+                                <input type="password" id="password" name="password" required>
+                                <button type="submit">Sign In</button>
+                        </form>
+                </div>
+        </div>
+        <script>
+                // Patch JS to use new IDs/classes
+                document.getElementById('eventSearch').id = 'search';
+                document.getElementById('eventCategory').id = 'categoryFilter';
+                document.getElementById('openLogin').id = 'showLogin';
+                document.getElementById('modalLogin').id = 'loginModal';
+                document.getElementById('gathering-list').id = 'event-container';
+        </script>
+        <script src="js/login.js"></script>
+        <script src="js/fetch_events.js"></script>
+</body>
+
+</html>

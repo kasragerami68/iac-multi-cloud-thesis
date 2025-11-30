@@ -1,0 +1,55 @@
+# Use Docker Compose version 3.8 file format
+version: '3.8'
+
+services:
+# Main web server running PHP and Apache
+  web:
+    
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: community_php   # Custom name for the container
+    ports:
+      - "9090:80"                   # Map port 9090 on host to port 80 in container (Apache default)
+      
+
+    volumes:
+      - ./:/var/www/html  # Mount project folder to Apache root folder inside container
+    networks:
+      - community_net     # Connect this container to a shared network
+
+ # MySQL database service
+  db:
+    image: mysql:8.0              # Use official MySQL 8.0 image
+    container_name: community_db   # Custom name for MySQL container
+    restart: always                  # Automatically restart the container if it crashes or system reboots
+    environment:
+      MYSQL_ROOT_PASSWORD: root123  # Root password for MySQL
+      MYSQL_DATABASE: community_db   # Database name to be created automatically
+      MYSQL_USER: kasra               # Custom user for connecting from PHP
+      MYSQL_PASSWORD: test1234         # Password for custom user
+    ports:
+      - "3307:3306"                # Map port 3307 on host to MySQL port 3306 in container
+    volumes:
+      - mysql_data:/var/lib/mysql   # Store MySQL data persistently in a named volume
+    networks:
+      - community_net
+
+# phpMyAdmin service for managing the database via browser
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin          # Use official phpMyAdmin image
+    container_name: community_phpmyadmin   # Connect to the same network as PHP and phpMyAdmin
+    ports:
+      - "9091:80"                         # Map port 9091 on host to port 80 in container (web interface)
+    environment:
+      PMA_HOST: db                      # Tell phpMyAdmin to connect to the 'db' service (MySQL)
+      MYSQL_ROOT_PASSWORD: root123        # Same root password as above
+    
+    networks:
+      - community_net         # Connect to the shared internal network
+# Define shared network so all services can talk to each other
+networks:
+  community_net:
+# Define a persistent volume to store MySQL data
+volumes:
+  mysql_data:
