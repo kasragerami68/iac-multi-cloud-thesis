@@ -137,6 +137,7 @@ output "database_security_group_id" {
 # دستورات مدیریتی - Management commands
 output "management_commands" {
   description = "دستورات مفید برای مدیریت - Useful management commands"
+  sensitive   = true
   value = <<-EOT
   
   📋 دستورات مفید / Useful Commands:
@@ -171,6 +172,7 @@ output "management_commands" {
 # خلاصه کامل منابع ساخته شده - Complete summary of created resources
 output "deployment_summary" {
   description = "خلاصه کامل منابع ساخته شده - Complete summary of created resources"
+  sensitive   = true
   value = <<-EOT
   
   🎉 استقرار موفقیت‌آمیز بود! / Deployment Successful!

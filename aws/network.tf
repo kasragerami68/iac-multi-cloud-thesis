@@ -115,7 +115,7 @@ resource "aws_route_table_association" "public_2" {
 # Security Group برای سرور وب - Security Group for web server
 resource "aws_security_group" "web_server" {
   name        = "${var.project_name}-${var.environment}-web-sg"
-  description = "Security group for web server - گروه امنیتی برای سرور وب"
+  description = "Security group for web server"
   vpc_id      = aws_vpc.main.id
   
   # قوانین ورودی - Inbound rules
@@ -175,7 +175,7 @@ resource "aws_security_group" "web_server" {
 # Security Group برای دیتابیس - Security Group for database
 resource "aws_security_group" "database" {
   name        = "${var.project_name}-${var.environment}-db-sg"
-  description = "Security group for database - گروه امنیتی برای دیتابیس"
+  description = "Security group for database"
   vpc_id      = aws_vpc.main.id
   
   # قوانین ورودی - Inbound rules
@@ -213,7 +213,7 @@ resource "aws_db_subnet_group" "main" {
   name       = "${var.project_name}-${var.environment}-db-subnet-group"
   subnet_ids = [aws_subnet.public_1.id, aws_subnet.public_2.id]
   
-  description = "Subnet group for RDS database - گروه Subnet برای دیتابیس RDS"
+  description = "Subnet group for RDS database"
   
   tags = {
     Name = "${var.project_name}-${var.environment}-db-subnet-group"

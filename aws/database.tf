@@ -128,7 +128,7 @@ resource "aws_db_parameter_group" "main" {
   family = "mysql8.0"
   
   # توضیحات - Description
-  description = "Custom parameter group for ${var.project_name} MySQL database"
+  description = "MySQL parameter group"
   
   # ====================================================================
   # پارامترهای سفارشی - Custom Parameters

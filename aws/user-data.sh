@@ -392,4 +392,4 @@ echo "=========================================="
 docker ps
 netstat -tulpn | grep LISTEN
 
-echo "Setup completed at: $(date)"
+echo "Setup completed at: $(date)"terraform apply
