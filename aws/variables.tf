@@ -27,7 +27,7 @@ variable "aws_region" {
 variable "instance_type" {
   description = "نوع سرور EC2 - EC2 instance type"
   type        = string
-  default     = "t2.micro"  # رایگان در Free Tier - Free in Free Tier
+  default     = "t3.micro"  # رایگان در Free Tier - Free in Free Tier
 }
 
 # نام کاربری دیتابیس - Database Username
