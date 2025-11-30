@@ -65,7 +65,7 @@ resource "aws_db_instance" "main" {
   # ====================================================================
   
   # پشتیبان‌گیری خودکار - Automated backups
-  backup_retention_period = 7  # 7 روز - 7 days
+  backup_retention_period = 0  # 7 روز - 7 days
   
   # زمان پشتیبان‌گیری (UTC) - Backup window (UTC)
   backup_window = "03:00-04:00"  # 3 صبح تا 4 صبح - 3 AM to 4 AM
