@@ -3,66 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IaC Multi-Cloud Deployment Demo</title>
+    <title>Multi-Cloud IaC Deployment | Kasra Gerami</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🚀 Infrastructure as Code</h1>
-            <p class="subtitle">Multi-Cloud Deployment Demonstration</p>
-        </header>
-
-        <main>
-            <section class="info-card">
-                <h2>📌 Project Information</h2>
-                <p><strong>Student:</strong> Kasra Gerami</p>
-                <p><strong>Program:</strong> MSc Computing (Internet Technology and Security)</p>
-                <p><strong>University:</strong> University of Northampton</p>
-                <p><strong>Thesis:</strong> Infrastructure as Code Best Practices for Multi-Cloud Environments</p>
-            </section>
-
-            <section class="info-card">
-                <h2>☁️ Current Deployment</h2>
-                <p><strong>Cloud Provider:</strong> Amazon Web Services (AWS)</p>
-                <p><strong>Region:</strong> us-east-1 (N. Virginia)</p>
-                <p><strong>Infrastructure:</strong></p>
-                <ul>
-                    <li>✅ VPC with 2 Subnets</li>
-                    <li>✅ EC2 Instance (t3.micro)</li>
-                    <li>✅ RDS MySQL Database (db.t3.micro)</li>
-                    <li>✅ Security Groups</li>
-                    <li>✅ Elastic IP</li>
-                </ul>
-            </section>
-
-            <section class="info-card">
-                <h2>🛠️ Technology Stack</h2>
-                <ul>
-                    <li><strong>IaC Tool:</strong> Terraform</li>
-                    <li><strong>Containerization:</strong> Docker</li>
-                    <li><strong>Version Control:</strong> Git/GitHub</li>
-                    <li><strong>Web Server:</strong> Nginx</li>
-                    <li><strong>Deployment Method:</strong> Automated via user-data script</li>
-                </ul>
-            </section>
-
-            <section class="info-card success">
-                <h2>✅ Deployment Status</h2>
-                <p class="status-message">This website is successfully deployed and running!</p>
-                <p><strong>Deployed at:</strong> <span id="datetime"></span></p>
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a demonstration of automated multi-cloud infrastructure deployment using Terraform and Docker.</p>
-            <p>&copy; 2025 Kasra Gerami | University of Northampton</p>
-        </footer>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
     </div>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-icon">☁️</span>
+                <span class="logo-text">CloudDeploy</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#infrastructure">Infrastructure</a>
+                <a href="#tech">Technology</a>
+                <a href="#status">Status</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎓 Master's Thesis Project</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Infrastructure as Code</span>
+                <br>Multi-Cloud Deployment
+            </h1>
+            <p class="hero-subtitle">Automating cloud infrastructure across AWS and GCP using modern DevOps practices</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">Explore Project</a>
+                <a href="https://github.com/kasragerami68/iac-multi-cloud-thesis" target="_blank" class="btn btn-secondary">
+                    <span>View on GitHub</span>
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-aws">
+                <div class="card-icon">☁️</div>
+                <div class="card-title">AWS</div>
+                <div class="card-status">● Active</div>
+            </div>
+            <div class="floating-card card-gcp">
+                <div class="card-icon">☁️</div>
+                <div class="card-title">GCP</div>
+                <div class="card-status">● Coming Soon</div>
+            </div>
+            <div class="connection-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📌 About This Project</span>
+                <h2 class="section-title">Academic Information</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">👨‍🎓</div>
+                    <div class="info-content">
+                        <h3>Student</h3>
+                        <p>Kasra Gerami</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🎓</div>
+                    <div class="info-content">
+                        <h3>Program</h3>
+                        <p>MSc Computing<br><span class="text-sm">(Internet Technology and Security)</span></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🏫</div>
+                    <div class="info-content">
+                        <h3>University</h3>
+                        <p>University of Northampton</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📚</div>
+                    <div class="info-content">
+                        <h3>Thesis Topic</h3>
+                        <p>Infrastructure as Code Best Practices for Multi-Cloud Environments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure Section -->
+    <section id="infrastructure" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">☁️ Cloud Infrastructure</span>
+                <h2 class="section-title">Current Deployment: AWS</h2>
+            </div>
+            <div class="deployment-info">
+                <div class="deployment-header">
+                    <div class="provider-logo">
+                        <div class="aws-logo">AWS</div>
+                    </div>
+                    <div class="provider-details">
+                        <h3>Amazon Web Services</h3>
+                        <p>Region: <strong>us-east-1</strong> (N. Virginia)</p>
+                    </div>
+                </div>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">🌐</div>
+                        <h4>Network</h4>
+                        <ul>
+                            <li>VPC (10.0.0.0/16)</li>
+                            <li>2 Public Subnets</li>
+                            <li>Internet Gateway</li>
+                            <li>Route Tables</li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">🖥️</div>
+                        <h4>Compute</h4>
+                        <ul>
+                            <li>EC2 Instance (t3.micro)</li>
+                            <li>Ubuntu 22.04 LTS</li>
+                            <li>Elastic IP</li>
+                            <li>30GB Encrypted Storage</li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">🗄️</div>
+                        <h4>Database</h4>
+                        <ul>
+                            <li>RDS MySQL 8.0</li>
+                            <li>db.t3.micro</li>
+                            <li>20GB gp3 Storage</li>
+                            <li>Multi-AZ Ready</li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">🔒</div>
+                        <h4>Security</h4>
+                        <ul>
+                            <li>2 Security Groups</li>
+                            <li>Firewall Rules</li>
+                            <li>Private Database</li>
+                            <li>Encrypted Traffic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section id="tech" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🛠️ Tech Stack</span>
+                <h2 class="section-title">Technologies & Tools</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🏗️</div>
+                    <h3>Terraform</h3>
+                    <p>Infrastructure as Code tool for building, changing, and versioning infrastructure</p>
+                    <div class="tech-badge">IaC</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🐳</div>
+                    <h3>Docker</h3>
+                    <p>Container platform for packaging and deploying applications consistently</p>
+                    <div class="tech-badge">Containerization</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔄</div>
+                    <h3>Git & GitHub</h3>
+                    <p>Version control system for tracking changes and collaboration</p>
+                    <div class="tech-badge">VCS</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🌐</div>
+                    <h3>Nginx</h3>
+                    <p>High-performance web server and reverse proxy server</p>
+                    <div class="tech-badge">Web Server</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Status Section -->
+    <section id="status" class="section section-status">
+        <div class="container">
+            <div class="status-card">
+                <div class="status-icon">✅</div>
+                <h2>Deployment Successful!</h2>
+                <p class="status-message">This website is running live on AWS infrastructure</p>
+                <div class="status-details">
+                    <div class="status-item">
+                        <span class="status-label">Deployment Time:</span>
+                        <span class="status-value">~15 minutes</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Total Resources:</span>
+                        <span class="status-value">14 AWS resources</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Cost:</span>
+                        <span class="status-value">$0 (Free Tier)</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Deployed At:</span>
+                        <span class="status-value" id="datetime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <span class="logo-icon">☁️</span>
+                        <span class="logo-text">CloudDeploy</span>
+                    </div>
+                    <p>Demonstrating automated multi-cloud infrastructure deployment using modern DevOps practices and Infrastructure as Code principles.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <a href="#about">About</a>
+                        <a href="#infrastructure">Infrastructure</a>
+                        <a href="#tech">Technology</a>
+                        <a href="#status">Status</a>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p>University of Northampton</p>
+                        <p>MSc Computing Program</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kasra Gerami | Multi-Cloud IaC Deployment Project</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // فقط برای نمایش تاریخ و ساعت
-        document.getElementById('datetime').textContent = new Date().toLocaleString();
+        // Update datetime
+        document.getElementById('datetime').textContent = new Date().toLocaleString('en-GB', {
+            dateStyle: 'medium',
+            timeStyle: 'short'
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
 </html>
