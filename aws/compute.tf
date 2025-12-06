@@ -99,9 +99,9 @@ resource "aws_instance" "web" {
   
   # این اسکریپت وقتی سرور برای اولین بار روشن میشه اجرا میشه
   # This script runs when server boots for the first time
-  user_data = templatefile("${path.module}/user-data.sh", {
-    # ارسال متغیرها به اسکریپت - Pass variables to script
-    db_host     = aws_db_instance.main.address
+user_data = templatefile("${path.module}/user-data.sh", {
+  db_host = aws_db_instance.main.address
+
     db_port     = aws_db_instance.main.port
     db_name     = var.db_name
     db_username = var.db_username

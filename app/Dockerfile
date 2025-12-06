@@ -1,12 +1,10 @@
-FROM php:8.2-apache
+FROM nginx:alpine
 
+# کپی فایل‌های HTML/CSS
+COPY index.html /usr/share/nginx/html/
+COPY style.css /usr/share/nginx/html/
 
-#Install mysqli extension
-RUN docker-php-ext-install mysqli
+# پورت
+EXPOSE 80
 
-
-#sET WORKING DIRECTORY
-WORKDIR /var/www/html
-
-# Copy all project files into container
-COPY . /var/www/html
+CMD ["nginx", "-g", "daemon off;"]

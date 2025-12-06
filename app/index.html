@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Community Gatherings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IaC Multi-Cloud Deployment Demo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-        <!-- Main header and search/filter area -->
+    <div class="container">
         <header>
-                <h1>Find Your Next Gathering</h1>
-                <div class="search-area">
-                        <input type="text" id="eventSearch" placeholder="Type to search events..." />
-                        <select id="eventCategory">
-                                <option value="">All Types</option>
-                                <option value="Workshop">Workshop</option>
-                                <option value="Seminar">Seminar</option>
-                                <option value="Conference">Conference</option>
-                                <option value="Meetup">Meetup</option>
-                        </select>
-                </div>
+            <h1>🚀 Infrastructure as Code</h1>
+            <p class="subtitle">Multi-Cloud Deployment Demonstration</p>
         </header>
-        <div class="auth-btn">
-                <button id="openLogin">Sign In</button>
-        </div>
-        <main id="gathering-list" class="gathering-grid">
-                <!-- Event cards will be rendered here -->
-        </main>
-        <!-- Login Modal -->
-        <div id="modalLogin" class="modal">
-                <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h2>Sign In</h2>
-                        <form>
-                                <label for="username">User:</label>
-                                <input type="text" id="username" name="username" required>
-                                <label for="password">Pass:</label>
-                                <input type="password" id="password" name="password" required>
-                                <button type="submit">Sign In</button>
-                        </form>
-                </div>
-        </div>
-        <script>
-                // Patch JS to use new IDs/classes
-                document.getElementById('eventSearch').id = 'search';
-                document.getElementById('eventCategory').id = 'categoryFilter';
-                document.getElementById('openLogin').id = 'showLogin';
-                document.getElementById('modalLogin').id = 'loginModal';
-                document.getElementById('gathering-list').id = 'event-container';
-        </script>
-        <script src="js/login.js"></script>
-        <script src="js/fetch_events.js"></script>
-</body>
 
+        <main>
+            <section class="info-card">
+                <h2>📌 Project Information</h2>
+                <p><strong>Student:</strong> Kasra Gerami</p>
+                <p><strong>Program:</strong> MSc Computing (Internet Technology and Security)</p>
+                <p><strong>University:</strong> University of Northampton</p>
+                <p><strong>Thesis:</strong> Infrastructure as Code Best Practices for Multi-Cloud Environments</p>
+            </section>
+
+            <section class="info-card">
+                <h2>☁️ Current Deployment</h2>
+                <p><strong>Cloud Provider:</strong> Amazon Web Services (AWS)</p>
+                <p><strong>Region:</strong> us-east-1 (N. Virginia)</p>
+                <p><strong>Infrastructure:</strong></p>
+                <ul>
+                    <li>✅ VPC with 2 Subnets</li>
+                    <li>✅ EC2 Instance (t3.micro)</li>
+                    <li>✅ RDS MySQL Database (db.t3.micro)</li>
+                    <li>✅ Security Groups</li>
+                    <li>✅ Elastic IP</li>
+                </ul>
+            </section>
+
+            <section class="info-card">
+                <h2>🛠️ Technology Stack</h2>
+                <ul>
+                    <li><strong>IaC Tool:</strong> Terraform</li>
+                    <li><strong>Containerization:</strong> Docker</li>
+                    <li><strong>Version Control:</strong> Git/GitHub</li>
+                    <li><strong>Web Server:</strong> Nginx</li>
+                    <li><strong>Deployment Method:</strong> Automated via user-data script</li>
+                </ul>
+            </section>
+
+            <section class="info-card success">
+                <h2>✅ Deployment Status</h2>
+                <p class="status-message">This website is successfully deployed and running!</p>
+                <p><strong>Deployed at:</strong> <span id="datetime"></span></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a demonstration of automated multi-cloud infrastructure deployment using Terraform and Docker.</p>
+            <p>&copy; 2025 Kasra Gerami | University of Northampton</p>
+        </footer>
+    </div>
+
+    <script>
+        // فقط برای نمایش تاریخ و ساعت
+        document.getElementById('datetime').textContent = new Date().toLocaleString();
+    </script>
+</body>
 </html>
