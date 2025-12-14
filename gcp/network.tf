@@ -47,3 +47,4 @@ resource "google_compute_firewall" "allow_internal" {
   source_ranges = ["10.0.0.0/16"]
   description   = "Allow internal traffic"
 }
+# Test CI/CD Trigger

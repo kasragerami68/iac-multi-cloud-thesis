@@ -59,3 +59,4 @@ echo "Starting application..."
 docker-compose up -d
 
 echo "=== Startup Script Completed at $(date) ==="
+# Test CI/CD Trigger

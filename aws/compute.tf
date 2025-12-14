@@ -90,3 +90,4 @@ resource "aws_eip" "web" {
     Name = "${var.project_name}-${var.environment}-web-eip"
   }
 }
+# Test CI/CD Trigger

@@ -109,3 +109,4 @@ output "ssh_connection_command" {
   description = "SSH command to connect to server"
   value       = "ssh -i ~/.ssh/id_rsa ubuntu@${aws_eip.web.public_ip}"
 }
+# Test CI/CD Trigger

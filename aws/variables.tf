@@ -76,3 +76,4 @@ variable "common_tags" {
     University  = "University of Northampton"
   }
 }
+# Test CI/CD Trigger

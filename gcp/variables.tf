@@ -57,3 +57,4 @@ variable "db_password" {
   default     = "test1234"
   sensitive   = true
 }
+# Test CI/CD Trigger
