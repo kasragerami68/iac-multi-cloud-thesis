@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 set -e
 
 # Logging
@@ -20,14 +20,11 @@ apt-get install -y ca-certificates curl gnupg lsb-release
 mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 apt-get update -y
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-# Start Docker
 systemctl start docker
 systemctl enable docker
 
@@ -52,20 +49,14 @@ git clone https://github.com/kasragerami68/iac-multi-cloud-thesis.git temp
 cp -r temp/app/* .
 rm -rf temp
 
-# Create .env file
+# Create environment file
 echo "Creating .env file..."
-cat > .env << 'EOF'
+cat > .env << EOF
 DB_HOST=${db_host}
-DB_PORT=3306
-DB_NAME=community_db
-DB_USER=kasra
-DB_PASSWORD=test1234
-APP_ENV=production
-APP_DEBUG=false
-APP_PORT=9090
-PHP_MEMORY_LIMIT=256M
-PHP_UPLOAD_MAX_FILESIZE=50M
-PHP_POST_MAX_SIZE=50M
+DB_PORT=${db_port}
+DB_NAME=${db_name}
+DB_USER=${db_username}
+DB_PASSWORD=${db_password}
 EOF
 
 # Wait for database

@@ -1,75 +1,73 @@
-# متغیرهای پروژه - Project Variables
-# این فایل شامل تمام متغیرهای قابل تنظیم پروژه است
-# This file contains all configurable project variables
+﻿# Project Variables
 
-# نام پروژه - Project name
+# Project name for resource naming
 variable "project_name" {
-  description = "نام پروژه که برای نام‌گذاری منابع استفاده می‌شود - Project name used for naming resources"
+  description = "Project name used for naming resources"
   type        = string
   default     = "iac-web-app"
 }
 
-# محیط (توسعه، تولید) - Environment (development, production)
+# Environment (dev, staging, prod)
 variable "environment" {
-  description = "محیط اجرا (dev, staging, prod) - Environment (dev, staging, prod)"
+  description = "Environment name"
   type        = string
   default     = "dev"
 }
 
-# منطقه AWS - AWS Region
+# AWS Region
 variable "aws_region" {
-  description = "منطقه جغرافیایی AWS - AWS geographic region"
+  description = "AWS geographic region"
   type        = string
   default     = "us-east-1"
 }
 
-# نوع Instance - Instance Type
+# EC2 Instance Type
 variable "instance_type" {
-  description = "نوع سرور EC2 - EC2 instance type"
+  description = "EC2 instance type"
   type        = string
-  default     = "t3.micro"  # رایگان در Free Tier - Free in Free Tier
+  default     = "t3.micro"
 }
 
-# نام کاربری دیتابیس - Database Username
+# Database Username
 variable "db_username" {
-  description = "نام کاربری دیتابیس MySQL - MySQL database username"
+  description = "MySQL database username"
   type        = string
   default     = "kasra"
-  sensitive   = true  # این متغیر حساس است - This variable is sensitive
+  sensitive   = true
 }
 
-# رمز عبور دیتابیس - Database Password
+# Database Password
 variable "db_password" {
-  description = "رمز عبور دیتابیس MySQL - MySQL database password"
+  description = "MySQL database password"
   type        = string
   default     = "test1234"
-  sensitive   = true  # این رمز در لاگ‌ها نمایش داده نمی‌شود - Password won't show in logs
+  sensitive   = true
 }
 
-# نام دیتابیس - Database Name
+# Database Name
 variable "db_name" {
-  description = "نام دیتابیس - Database name"
+  description = "Database name"
   type        = string
   default     = "community_db"
 }
 
-# نوع Instance دیتابیس - Database Instance Type
+# Database Instance Type
 variable "db_instance_class" {
-  description = "نوع سرور دیتابیس - Database server type"
+  description = "RDS instance class"
   type        = string
-  default     = "db.t3.micro"  # رایگان در Free Tier - Free in Free Tier
+  default     = "db.t3.micro"
 }
 
-# فضای ذخیره‌سازی دیتابیس (گیگابایت) - Database Storage (GB)
+# Database Storage Size (GB)
 variable "db_allocated_storage" {
-  description = "فضای ذخیره‌سازی دیتابیس به گیگابایت - Database storage in GB"
+  description = "Database storage in GB"
   type        = number
-  default     = 20  # حداقل مجاز - Minimum allowed
+  default     = 20
 }
 
-# تگ‌های مشترک - Common Tags
+# Common Resource Tags
 variable "common_tags" {
-  description = "تگ‌های مشترک برای تمام منابع - Common tags for all resources"
+  description = "Common tags for all resources"
   type        = map(string)
   default = {
     Project     = "IaC-Multi-Cloud-Thesis"
