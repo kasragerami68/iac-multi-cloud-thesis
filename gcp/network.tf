@@ -1,4 +1,4 @@
-resource "google_compute_network" "main" {
+﻿resource "google_compute_network" "main" {
   name                    = "${var.project_name}-${var.environment}-vpc"
   auto_create_subnetworks = false
   description             = "VPC for web application"

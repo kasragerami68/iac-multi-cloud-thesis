@@ -1,4 +1,4 @@
-resource "google_sql_database_instance" "main" {
+﻿resource "google_sql_database_instance" "main" {
   name             = "${var.project_name}-${var.environment}-db"
   database_version = "MYSQL_8_0"
   region           = var.region

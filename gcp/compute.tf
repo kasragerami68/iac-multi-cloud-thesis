@@ -1,4 +1,4 @@
-resource "google_compute_address" "main" {
+﻿resource "google_compute_address" "main" {
   name   = "${var.project_name}-${var.environment}-ip"
   region = var.region
 }

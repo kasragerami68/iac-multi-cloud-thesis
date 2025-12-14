@@ -1,4 +1,4 @@
-output "application_url" {
+﻿output "application_url" {
   description = "Application URL"
   value       = "http://${google_compute_address.main.address}:9090"
 }
