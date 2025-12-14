@@ -25,7 +25,11 @@ resource "google_compute_instance" "main" {
       nat_ip = google_compute_address.main.address
     }
   }
-
+shielded_instance_config {
+    enable_secure_boot          = true
+    enable_vtpm                 = true
+    enable_integrity_monitoring = true
+  }
   metadata_startup_script = templatefile("${path.module}/startup-script.sh", {
     db_host     = google_sql_database_instance.main.public_ip_address
     db_name     = var.db_name

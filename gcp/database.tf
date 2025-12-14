@@ -16,7 +16,6 @@
 
     ip_configuration {
       ipv4_enabled = true
-      ssl_mode     = "ENCRYPTED_ONLY"
       authorized_networks {
         name  = "allow-all"
         value = "0.0.0.0/0"
