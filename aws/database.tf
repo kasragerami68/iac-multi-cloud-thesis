@@ -15,6 +15,7 @@ resource "aws_db_instance" "main" {
   instance_class    = var.db_instance_class
   allocated_storage = var.db_allocated_storage
   storage_type      = "gp3"
+  storage_encrypted = true
   
   # Credentials
   db_name  = var.db_name

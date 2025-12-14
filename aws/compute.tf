@@ -44,7 +44,10 @@ resource "aws_instance" "web" {
       Name = "${var.project_name}-${var.environment}-root-volume"
     }
   }
-  
+  metadata_options {
+    http_endpoint = "enabled"
+    http_tokens   = "required"
+  }
   # Initialization Script
   user_data = templatefile("${path.module}/user-data.sh", {
     db_host      = aws_db_instance.main.address
