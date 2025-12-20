@@ -28,7 +28,10 @@ output "web_server_availability_zone" {
   description = "Server availability zone"
   value       = aws_instance.web.availability_zone
 }
-
+output "application_url" {
+  description = "URL to access the web application"
+  value       = "http://${aws_eip.web.public_ip}:9090"
+}
 # ====================================================================
 # Database Information
 # ====================================================================
