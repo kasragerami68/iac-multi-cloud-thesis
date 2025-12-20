@@ -3,9 +3,9 @@
 ## 🎓 Project Overview
 This project demonstrates Infrastructure as Code best practices for managing resources across multiple cloud providers (AWS and Google Cloud Platform).
 
-**Author:** Kasra Gerami  
-**Programme:** MSc Computing (Internet Technology and Security)  
-**University:** University of Northampton  
+**Author:** Kasra Gerami
+**Programme:** MSc Computing (Internet Technology and Security)
+**University:** University of Northampton
 **Thesis Title:** Infrastructure as Code (IaC) Best Practices for Multi-Cloud Environments
 
 ---
@@ -201,9 +201,9 @@ Detailed documentation for each component:
 
 ## 📧 Contact
 
-**Kasra Gerami**  
-MSc Computing Student  
-University of Northampton  
+**Kasra Gerami**
+MSc Computing Student
+University of Northampton
 GitHub: [@kasragerami68](https://github.com/kasragerami68)
 
 ---
@@ -215,3 +215,12 @@ This project is created for academic purposes as part of a Master's thesis at th
 ---
 
 **Last Updated:** January 2025
+## 🔄 CI/CD Pipeline
+
+This project uses GitHub Actions for automated testing and security scanning:
+
+- **AWS Pipeline**: Validates Terraform code and runs Checkov security scans
+- **GCP Pipeline**: Validates Terraform code and runs Checkov security scans
+- **Triggers**: Automatically runs on every push and pull request
+
+Last tested: December 14, 2025
