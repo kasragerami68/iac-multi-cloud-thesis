@@ -9,6 +9,7 @@ on:
     branches: [ main ]
     paths:
       - 'aws/**'
+  workflow_dispatch:
 
 jobs:
   terraform-aws:

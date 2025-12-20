@@ -224,3 +224,13 @@ This project uses GitHub Actions for automated testing and security scanning:
 - **Triggers**: Automatically runs on every push and pull request
 
 Last tested: December 14, 2025
+**Last Updated:** January 2025
+## 🔄 CI/CD Pipeline
+
+This project uses GitHub Actions for automated testing and security scanning:
+
+- **AWS Pipeline**: Validates Terraform code and runs Checkov security scans
+- **GCP Pipeline**: Validates Terraform code and runs Checkov security scans
+- **Triggers**: Automatically runs on every push and pull request
+
+Last tested: December 14, 2025
