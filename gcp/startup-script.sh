@@ -60,3 +60,6 @@ docker-compose up -d
 
 echo "=== Startup Script Completed at $(date) ==="
 # Test CI/CD Trigger
+echo "Ensuring Docker starts on boot..."
+systemctl enable docker
+docker-compose -f /opt/iac-web-app/docker-compose.yml up -d || true
