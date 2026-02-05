@@ -56,4 +56,4 @@ jobs:
         framework: terraform
         soft_fail: true
         output_format: cli
-        check: CKV_AWS_16
+        
