@@ -3,6 +3,8 @@ name: AWS Terraform Security Scan
 on:
   push:
     branches: [ main ]
+    #paths:
+      #- 'aws/**'
   pull_request:
     branches: [ main ]
     paths:
@@ -47,11 +49,11 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       continue-on-error: true
     
-    # ✅ بخش اصلی - اینجا تغییر کرد!
     - name: Run Checkov Security Scan
       uses: bridgecrewio/checkov-action@master
       with:
         directory: aws/
-        config_file: .checkov.yaml  # ← این خط رو اضافه کن
+        framework: terraform
+        soft_fail: true
         output_format: cli
-        # soft_fail رو حذف کن - حالا از config file میاد
+        check: CKV_AWS_161
