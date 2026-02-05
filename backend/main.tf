@@ -104,7 +104,7 @@ output "backend_config" {
       key            = "PROJECT_NAME/terraform.tfstate"
       region         = "us-east-1"
       dynamodb_table = "${aws_dynamodb_table.terraform_locks.name}"
-      encrypt        = true
+      encrypt        = false
     }
   EOT
 }
