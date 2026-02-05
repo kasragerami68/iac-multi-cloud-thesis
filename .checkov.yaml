@@ -1,0 +1,22 @@
+# .checkov.yaml - تنظیمات Checkov
+
+# فریمورک‌هایی که می‌خوای چک بشه
+framework:
+  - terraform
+
+# اگه خطا پیدا کرد، workflow رو fail کن
+soft-fail: false
+
+# فقط این چک‌های امنیتی مهم رو بررسی کن:
+check:
+  - CKV_AWS_16    # RDS encryption at rest (خیلی مهم!)
+  - CKV_AWS_161   # RDS IAM authentication
+  - CKV_AWS_157   # RDS Multi-AZ enabled
+  - CKV_AWS_353   # RDS deletion protection
+  - CKV_AWS_293   # RDS backup retention
+
+# خروجی کوتاه‌تر و خواناتر
+compact: true
+
+# پیام‌های اضافی نشون بده
+quiet: false
