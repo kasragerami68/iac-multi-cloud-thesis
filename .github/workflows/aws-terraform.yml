@@ -3,8 +3,8 @@ name: AWS Terraform Security Scan
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'aws/**'
+    #paths:
+      #- 'aws/**'
   pull_request:
     branches: [ main ]
     paths:
