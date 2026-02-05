@@ -54,6 +54,6 @@ jobs:
       with:
         directory: aws/
         framework: terraform
-        soft_fail: true
+        soft_fail: false
         output_format: cli
         check: CKV_AWS_161
