@@ -1,4 +1,4 @@
-﻿# Outputs - Infrastructure Information
+# Outputs - Infrastructure Information
 
 # ====================================================================
 # Server Information

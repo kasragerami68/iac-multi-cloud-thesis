@@ -1,4 +1,4 @@
-﻿# Network and Security Configuration
+# Network and Security Configuration
 
 # ====================================================================
 # VPC - Virtual Private Cloud
@@ -8,7 +8,7 @@ resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-vpc"
   }
@@ -20,7 +20,7 @@ resource "aws_vpc" "main" {
 
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-igw"
   }
@@ -36,7 +36,7 @@ resource "aws_subnet" "public_1" {
   cidr_block              = "10.0.1.0/24"
   availability_zone       = "${var.aws_region}a"
   map_public_ip_on_launch = true
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-public-subnet-1"
     Type = "Public"
@@ -49,7 +49,7 @@ resource "aws_subnet" "public_2" {
   cidr_block              = "10.0.2.0/24"
   availability_zone       = "${var.aws_region}b"
   map_public_ip_on_launch = true
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-public-subnet-2"
     Type = "Public"
@@ -63,12 +63,12 @@ resource "aws_subnet" "public_2" {
 # Route table for public subnets
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
-  
+
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.main.id
   }
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-public-rt"
   }
@@ -95,7 +95,7 @@ resource "aws_security_group" "web_server" {
   name        = "${var.project_name}-${var.environment}-web-sg"
   description = "Security group for web server"
   vpc_id      = aws_vpc.main.id
-  
+
   # HTTP
   ingress {
     description = "HTTP from anywhere"
@@ -104,7 +104,7 @@ resource "aws_security_group" "web_server" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   # HTTPS
   ingress {
     description = "HTTPS from anywhere"
@@ -113,7 +113,7 @@ resource "aws_security_group" "web_server" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   # SSH
   ingress {
     description = "SSH for management"
@@ -122,7 +122,7 @@ resource "aws_security_group" "web_server" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   # Application Port
   ingress {
     description = "Application port"
@@ -131,7 +131,7 @@ resource "aws_security_group" "web_server" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   # Allow all outbound
   egress {
     description = "All outbound traffic"
@@ -140,7 +140,7 @@ resource "aws_security_group" "web_server" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-web-sg"
   }
@@ -151,7 +151,7 @@ resource "aws_security_group" "database" {
   name        = "${var.project_name}-${var.environment}-db-sg"
   description = "Security group for database"
   vpc_id      = aws_vpc.main.id
-  
+
   # MySQL from web server only
   ingress {
     description     = "MySQL from web server"
@@ -160,7 +160,7 @@ resource "aws_security_group" "database" {
     protocol        = "tcp"
     security_groups = [aws_security_group.web_server.id]
   }
-  
+
   # Allow all outbound
   egress {
     description = "All outbound traffic"
@@ -169,7 +169,7 @@ resource "aws_security_group" "database" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-db-sg"
   }
@@ -183,7 +183,7 @@ resource "aws_db_subnet_group" "main" {
   name        = "${var.project_name}-${var.environment}-db-subnet-group"
   subnet_ids  = [aws_subnet.public_1.id, aws_subnet.public_2.id]
   description = "Subnet group for RDS database"
-  
+
   tags = {
     Name = "${var.project_name}-${var.environment}-db-subnet-group"
   }

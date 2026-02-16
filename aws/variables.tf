@@ -1,4 +1,4 @@
-﻿# Project Variables
+# Project Variables
 
 # Project name for resource naming
 variable "project_name" {
@@ -70,10 +70,10 @@ variable "common_tags" {
   description = "Common tags for all resources"
   type        = map(string)
   default = {
-    Project     = "IaC-Multi-Cloud-Thesis"
-    ManagedBy   = "Terraform"
-    Owner       = "Kasra Gerami"
-    University  = "University of Northampton"
+    Project    = "IaC-Multi-Cloud-Thesis"
+    ManagedBy  = "Terraform"
+    Owner      = "Kasra Gerami"
+    University = "University of Northampton"
   }
 }
-# Test CI/CD Trigger"" 
+# Test CI/CD Trigger""
